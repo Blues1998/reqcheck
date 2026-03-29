@@ -30,6 +30,7 @@ _STDLIB_39: frozenset[str] = frozenset(
         "chunk",
         "cmath",
         "cmd",
+        "collections",
         "code",
         "codecs",
         "codeop",
