@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from reqscan.requirements_parser import (
+from reqdiff.requirements_parser import (
     normalize_package_name,
     parse_pyproject_toml,
     parse_requirements_txt,

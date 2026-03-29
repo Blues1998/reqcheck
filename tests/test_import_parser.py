@@ -1,6 +1,6 @@
 import warnings
 
-from reqscan.import_parser import extract_imports_from_source
+from reqdiff.import_parser import extract_imports_from_source
 
 
 def test_simple_import():

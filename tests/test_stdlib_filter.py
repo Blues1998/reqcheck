@@ -1,4 +1,4 @@
-from reqscan.stdlib_filter import is_stdlib_module
+from reqdiff.stdlib_filter import is_stdlib_module
 
 
 def test_known_stdlib_modules():

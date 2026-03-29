@@ -2,17 +2,17 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from reqscan.config import load_config
-from reqscan.import_parser import extract_imports_from_file
-from reqscan.models import ReqcheckConfig, ScanResult
-from reqscan.requirements_parser import (
+from reqdiff.config import load_config
+from reqdiff.import_parser import extract_imports_from_file
+from reqdiff.models import ReqcheckConfig, ScanResult
+from reqdiff.requirements_parser import (
     discover_and_parse,
     normalize_package_name,
     parse_requirements_txt,
 )
-from reqscan.resolver import ImportPackageResolver
-from reqscan.scanner import find_python_files
-from reqscan.stdlib_filter import is_stdlib_module
+from reqdiff.resolver import ImportPackageResolver
+from reqdiff.scanner import find_python_files
+from reqdiff.stdlib_filter import is_stdlib_module
 
 
 def run_check(
