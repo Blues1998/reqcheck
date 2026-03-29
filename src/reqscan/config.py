@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from reqcheck.models import ReqcheckConfig
+from reqscan.models import ReqcheckConfig
 
 if sys.version_info >= (3, 11):
     import tomllib
@@ -13,10 +13,10 @@ else:
 
 
 def _find_config_file(start: Path) -> Path | None:
-    """Walk up from start directory looking for pyproject.toml or .reqcheck.toml."""
+    """Walk up from start directory looking for pyproject.toml or .reqscan.toml."""
     current = start.resolve()
     while True:
-        for name in (".reqcheck.toml", "pyproject.toml"):
+        for name in (".reqscan.toml", "pyproject.toml"):
             candidate = current / name
             if candidate.exists():
                 return candidate
@@ -37,10 +37,10 @@ def load_config(start: Path, config_file: Path | None = None) -> ReqcheckConfig:
     except Exception:
         return ReqcheckConfig()
 
-    # Support both [tool.reqcheck] (in pyproject.toml) and top-level [reqcheck] (.reqcheck.toml)
+    # Support both [tool.reqscan] (in pyproject.toml) and top-level [reqscan] (.reqscan.toml)
     section: dict[str, Any] = (
-        data.get("tool", {}).get("reqcheck", {})
-        or data.get("reqcheck", {})
+        data.get("tool", {}).get("reqscan", {})
+        or data.get("reqscan", {})
     )
 
     return ReqcheckConfig(

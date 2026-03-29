@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "reqcheck"
+name = "reqscan"
 version = "0.1.0"
 description = "Detect unused and undeclared Python dependencies"
 readme = "README.md"
@@ -38,15 +38,15 @@ dev = [
 ]
 
 [project.scripts]
-reqcheck = "reqcheck.cli:main"
+reqscan = "reqscan.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/blues1998/reqcheck"
-Repository = "https://github.com/blues1998/reqcheck"
-Issues = "https://github.com/blues1998/reqcheck/issues"
+Homepage = "https://github.com/blues1998/reqscan"
+Repository = "https://github.com/blues1998/reqscan"
+Issues = "https://github.com/blues1998/reqscan/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/reqcheck"]
+packages = ["src/reqscan"]
 
 [tool.ruff]
 line-length = 100
@@ -64,5 +64,5 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
-[tool.reqcheck]
+[tool.reqscan]
 exclude_dirs = [".venv", "venv", ".git", "__pycache__", "dist", "build"]

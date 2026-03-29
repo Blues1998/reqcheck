@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from reqcheck.models import ReqcheckConfig
-from reqcheck.scanner import find_python_files
+from reqscan.models import ReqcheckConfig
+from reqscan.scanner import find_python_files
 
 
 def test_finds_python_files(tmp_path: Path):

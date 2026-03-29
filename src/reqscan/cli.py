@@ -6,9 +6,9 @@ from pathlib import Path
 import click
 from rich.console import Console
 
-from reqcheck import __version__
-from reqcheck.core import run_check
-from reqcheck.reporter import render_json, render_results
+from reqscan import __version__
+from reqscan.core import run_check
+from reqscan.reporter import render_json, render_results
 
 
 @click.command(context_settings={"help_option_names": ["-h", "--help"]})

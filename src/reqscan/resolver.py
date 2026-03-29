@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from reqcheck.requirements_parser import normalize_package_name
+from reqscan.requirements_parser import normalize_package_name
 
 try:
     from importlib.metadata import packages_distributions  # type: ignore[attr-defined]

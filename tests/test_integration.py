@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 from click.testing import CliRunner
 
-from reqcheck.cli import main
-from reqcheck.core import run_check
+from reqscan.cli import main
+from reqscan.core import run_check
 
 
 @pytest.fixture
@@ -93,7 +93,7 @@ def test_cli_no_color_flag(fixtures_dir: Path):
 
 
 def test_cli_version():
-    from reqcheck import __version__
+    from reqscan import __version__
 
     runner = CliRunner()
     result = runner.invoke(main, ["--version"])

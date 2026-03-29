@@ -4,7 +4,7 @@ import json
 
 from rich.console import Console
 
-from reqcheck.models import ScanResult
+from reqscan.models import ScanResult
 
 
 def render_results(result: ScanResult, console: Console, *, path: str = ".") -> None:

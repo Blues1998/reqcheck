@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from reqcheck.resolver import ImportPackageResolver
+from reqscan.resolver import ImportPackageResolver
 
 
 def test_known_mapping_pil():
@@ -49,7 +49,7 @@ def test_package_to_imports_heuristic_fallback():
 def test_live_env_data_overrides_static(tmp_path):
     """Live packages_distributions() data should take priority over static mappings."""
     mock_data = {"mockpkg": ["mock-package"]}
-    with patch("reqcheck.resolver.packages_distributions", return_value=mock_data):
+    with patch("reqscan.resolver.packages_distributions", return_value=mock_data):
         resolver = ImportPackageResolver()
     assert resolver.import_to_package("mockpkg") == "mock-package"
 

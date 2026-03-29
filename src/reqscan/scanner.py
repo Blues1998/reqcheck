@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from reqcheck.models import ReqcheckConfig
+from reqscan.models import ReqcheckConfig
 
 
 def find_python_files(root: Path, config: ReqcheckConfig) -> list[Path]:
