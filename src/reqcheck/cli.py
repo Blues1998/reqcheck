@@ -60,7 +60,7 @@ def main(
             include_dev=include_dev,
         )
     except Exception as exc:
-        console.print(f"[bold red]Error:[/bold red] {exc}", err=True)
+        Console(stderr=True).print(f"[bold red]Error:[/bold red] {exc}")
         sys.exit(2)
 
     if output_json:

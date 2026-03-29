@@ -5,9 +5,9 @@ from pathlib import Path
 from reqcheck.requirements_parser import normalize_package_name
 
 try:
-    from importlib.metadata import packages_distributions
+    from importlib.metadata import packages_distributions  # type: ignore[attr-defined]
 except ImportError:
-    packages_distributions = None  # type: ignore[assignment]
+    packages_distributions = None
 
 # Well-known import-name → package-name mismatches.
 # These are used as a fallback when the package isn't installed in the current env.

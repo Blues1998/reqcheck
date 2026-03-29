@@ -266,7 +266,7 @@ _STDLIB_39: frozenset[str] = frozenset(
 
 # Use sys.stdlib_module_names if available (Python 3.10+), else fall back
 _STDLIB: frozenset[str] = (
-    sys.stdlib_module_names  # type: ignore[attr-defined]
+    sys.stdlib_module_names
     if hasattr(sys, "stdlib_module_names")
     else _STDLIB_39
 )

@@ -11,7 +11,7 @@ from packaging.requirements import InvalidRequirement, Requirement
 if sys.version_info >= (3, 11):
     import tomllib
 else:
-    import tomli as tomllib  # type: ignore[no-reattr]
+    import tomli as tomllib
 
 
 def normalize_package_name(name: str) -> str:

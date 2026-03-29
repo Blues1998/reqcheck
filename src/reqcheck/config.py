@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import Any
 
 from reqcheck.models import ReqcheckConfig
 
 if sys.version_info >= (3, 11):
     import tomllib
 else:
-    import tomli as tomllib  # type: ignore[no-reattr]
+    import tomli as tomllib
 
 
 def _find_config_file(start: Path) -> Path | None:
@@ -37,7 +38,7 @@ def load_config(start: Path, config_file: Path | None = None) -> ReqcheckConfig:
         return ReqcheckConfig()
 
     # Support both [tool.reqcheck] (in pyproject.toml) and top-level [reqcheck] (.reqcheck.toml)
-    section: dict = (
+    section: dict[str, Any] = (
         data.get("tool", {}).get("reqcheck", {})
         or data.get("reqcheck", {})
     )
