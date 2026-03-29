@@ -1,7 +1,5 @@
 from pathlib import Path
 
-import pytest
-
 from reqcheck.requirements_parser import (
     normalize_package_name,
     parse_pyproject_toml,
